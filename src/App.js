@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import AddMovie from './Components/AddMovie';
+import SearchMovie from './Components/SearchMovie';
+import DeletMovie from './Components/DeletMovie';
+import ViewAll from './Components/ViewAll';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AddMovie/>}/>
+        <Route path='/SearchMovie' element={<SearchMovie/>}/>
+        <Route path='/DeletMovie' element={<DeletMovie/>}/>
+        <Route path='/ViewAll' element={<ViewAll/>}/>
+      <AddMovie/>
+      <SearchMovie/>
+      <DeletMovie/>
+      <ViewAll/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
